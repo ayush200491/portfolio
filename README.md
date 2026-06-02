@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/Portfolio_Logo.svg" width="50" alt="Logo" />
+  <img src="./Portfolio_Logo.svg" width="50" alt="Logo" />
 </p>
 
 <h1 align="center">Ayush Patidar Portfolio</h1>

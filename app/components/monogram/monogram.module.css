@@ -1,0 +1,51 @@
+@layer components {
+  .monogram {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 50px;
+    height: 35px;
+    transition: none;
+    overflow: visible;
+
+  }
+
+
+  .svg {
+    display: block;
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    box-sizing: content-box;
+    fill: currentColor;
+    transition: color 0ms;
+    transform-origin: center;
+  }
+
+  .monogram img {
+  transition: filter 0s ease;
+}
+
+/* Dark theme = white logo */
+[data-theme='dark'] .monogram img {
+  filter: brightness(0) invert(1);
+}
+
+/* Light theme = black logo */
+[data-theme='light'] .monogram img {
+  filter: brightness(0);
+}
+
+/* Hover = cyan logo */
+.monogram:hover img {
+  filter: brightness(0) saturate(100%)
+          invert(82%)
+          sepia(92%)
+          saturate(2500%)
+          hue-rotate(145deg)
+          brightness(103%)
+          contrast(101%);
+}
+}

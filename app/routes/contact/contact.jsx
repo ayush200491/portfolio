@@ -14,6 +14,7 @@ import { useRef } from 'react';
 import { cssProps, msToNum, numToMs } from '~/utils/style';
 import { baseMeta } from '~/utils/meta';
 import { Form, useActionData, useNavigation } from '@remix-run/react';
+import { json } from '@remix-run/cloudflare';
 import styles from './contact.module.css';
 
 export const meta = () => {
@@ -27,6 +28,58 @@ export const meta = () => {
 const MAX_EMAIL_LENGTH = 512;
 const MAX_MESSAGE_LENGTH = 4096;
 const EMAIL_PATTERN = /(.+)@(.+){2,}\.(.+){2,}/;
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xpqnvobq';
+
+export async function action({ request }) {
+  const formData = await request.formData();
+  const isBot = String(formData.get('name'));
+  const email = String(formData.get('email'));
+  const message = String(formData.get('message'));
+  const errors = {};
+
+  if (isBot) return json({ success: true });
+
+  if (!email || !EMAIL_PATTERN.test(email)) {
+    errors.email = 'Please enter a valid email address.';
+  }
+
+  if (!message) {
+    errors.message = 'Please enter a message.';
+  }
+
+  if (email.length > MAX_EMAIL_LENGTH) {
+    errors.email = `Email address must be shorter than ${MAX_EMAIL_LENGTH} characters.`;
+  }
+
+  if (message.length > MAX_MESSAGE_LENGTH) {
+    errors.message = `Message must be shorter than ${MAX_MESSAGE_LENGTH} characters.`;
+  }
+
+  if (Object.keys(errors).length > 0) {
+    return json({ errors });
+  }
+
+  const response = await fetch(FORMSPREE_ENDPOINT, {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+    },
+    body: formData,
+  });
+
+  if (!response.ok) {
+    return json(
+      {
+        errors: {
+          message: 'Sorry, the message could not be sent right now. Please try again.',
+        },
+      },
+      { status: 500 }
+    );
+  }
+
+  return json({ success: true });
+}
 
 export const Contact = () => {
   const errorRef = useRef();
@@ -41,11 +94,7 @@ export const Contact = () => {
     <Section className={styles.contact}>
       <Transition unmount in={!actionData?.success} timeout={1600}>
         {({ status, nodeRef }) => (
-          <form
-           action="https://formspree.io/f/xpqnvobq"
-           method="POST"
-           className={styles.form}
-            >
+          <Form unstable_viewTransition className={styles.form} method="post" ref={nodeRef}>
             <Heading
               className={styles.title}
               data-status={status}
@@ -128,7 +177,7 @@ export const Contact = () => {
             >
               Send message
             </Button>
-          </form>
+          </Form>
         )}
       </Transition>
       <Transition unmount in={actionData?.success}>

@@ -1,27 +1,54 @@
 <p align="center">
   <img src="/Portfolio_Logo.svg" width="50" alt="Logo" />
 </p>
-<h1 align="center">Personal portfolio</h1>
 
-[![Site preview](/public/site-preview.png)](https://github.com/ayush200491)
+<h1 align="center">Ayush Patidar Portfolio</h1>
 
-My portfolio to showcase projects. Built with [Remix](https://remix.run/), [Three.js](https://threejs.org/), and [Framer Motion](https://www.framer.com/motion/). View my GitHub profile at [github.com/ayush200491](https://github.com/ayush200491) or check out a live version of the [components storybook](/storybook-static).
+[![Site Preview](/public/site-preview.png)](https://github.com/ayush200491)
 
-## Install & run
+A modern personal portfolio showcasing my projects, skills, and development journey. Built with Remix, Three.js, and Framer Motion.
 
-Make sure you have nodejs `19.9.0` or higher and npm `9.6.3` or higher installed. Install dependencies with:
+## About
+
+This portfolio serves as a central hub for my work, projects, and technical interests. It highlights my development experience, featured projects, and provides a way to connect with me.
+
+* GitHub: https://github.com/ayush200491
+* Portfolio Website:
+
+## Tech Stack
+
+* Remix
+* React
+* Three.js
+* Framer Motion
+* Cloudflare Pages
+
+## Getting Started
+
+### Prerequisites
+
+* Node.js 19.9.0 or higher
+* npm 9.6.3 or higher
+
+### Installation
 
 ```bash
 npm install
 ```
 
-Once it's done start up a local server with:
+### Run Development Server
 
 ```bash
 npm run dev
 ```
 
-To view the components storybook:
+Open your browser and visit:
+
+```text
+http://localhost:7777
+```
+
+### Run Storybook
 
 ```bash
 npm run dev:storybook
@@ -29,28 +56,43 @@ npm run dev:storybook
 
 ## Deployment
 
-I've set up the site using Cloudflare for hosting. Deploy the site to Cloudflare Pages:
+This project is configured for deployment on Cloudflare Pages.
+
+Deploy using:
 
 ```bash
 npm run deploy
 ```
 
-## Permissions
+## Contact Form Setup
 
-I'm cool with anyone using the code or parts of the code for their own site, it is open source so people can learn from it and adapt it. However, I would encourage you to modify the theme and components it to make it your own. If you are using the site's design largely unmodified, I'd appreciate being credited as the designer of the website.
+To enable the contact form:
 
-I do not give permission to present any of my projects as your own (this is being actively used as my portfolio site and these are my real projects I've worked on).
+1. Create an AWS account.
+2. Configure AWS SES (Simple Email Service).
+3. Copy `.dev.vars.example` to `.dev.vars`.
+4. Add your AWS credentials and configuration.
+5. Configure the same environment variables in Cloudflare Pages for production.
 
-## FAQs
+Alternatively, you can replace AWS SES with Nodemailer or another email provider.
 
-<details>
-  <summary>How do I change the color on the <code>DisplacementSphere</code> (blobby rotating thing in the background).</summary>
-  
-  You'll need to edit the fragment shader. [Check out this repo for reference](https://github.com/ayush200491/portfolio).
-</details>
+## Project Structure
 
-<details>
-  <summary>How do I get the contact form to work?</summary>
-  
-  To get the contact form working create an AWS account and set up SES (Simple Email service). Then plug in your details into `.dev.vars.example` and rename it to `.dev.vars`. You'll also need to add these as enviroment variables in the Cloudflare dashboard for it to work in production. Or if you don't mind sending through gmail use [nodemailer](https://nodemailer.com/) instead.
-</details>
+```text
+app/
+public/
+scripts/
+storybook/
+```
+
+## License
+
+This project is open source and available for learning and inspiration.
+
+Please do not copy and present my personal projects, content, or portfolio as your own work.
+
+## Connect With Me
+
+GitHub: https://github.com/ayush200491
+
+Feel free to explore my repositories, contribute, or reach out with feedback and suggestions.

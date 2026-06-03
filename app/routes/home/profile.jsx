@@ -6,7 +6,6 @@ import { DecoderText } from '~/components/decoder-text';
 import { Divider } from '~/components/divider';
 import { Heading } from '~/components/heading';
 import { Image } from '~/components/image';
-import { Link } from '~/components/link';
 import { Section } from '~/components/section';
 import { Text } from '~/components/text';
 import { Transition } from '~/components/transition';
@@ -27,8 +26,7 @@ const ProfileText = ({ visible, titleId }) => (
     <Text className={styles.description} data-visible={visible} size="l" as="p">
       I am a CSE student passionate about full-stack development, modern UI/UX,
       scalable applications, and interactive web experiences. I enjoy building
-      finance and productivity applications and learning modern technologies. If you’d
-      like to see my tooling and setup check out my <Link href="/uses">uses page</Link>.
+      finance and productivity applications and learning modern technologies.
     </Text>
   </Fragment>
 );

@@ -4,18 +4,21 @@
 
 <h1 align="center">Ayush Patidar Portfolio</h1>
 
-[![Site Preview](/public/site-preview.png)](https://github.com/ayush200491)
+<p align="center">
+  A modern portfolio showcasing my projects, skills, and development journey.
+</p>
 
-A modern personal portfolio showcasing my projects, skills, and development journey. Built with Remix, Three.js, and Framer Motion.
+## 🌐 Live Website
 
-## About
+Portfolio: https://portfolio-55m.pages.dev
 
-This portfolio serves as a central hub for my work, projects, and technical interests. It highlights my development experience, featured projects, and provides a way to connect with me.
+## 👨‍💻 About
 
-* GitHub: https://github.com/ayush200491
-* Portfolio Website:
+This portfolio serves as a central hub for my work, projects, and technical interests. It showcases featured projects, technical skills, and provides a way to connect with me.
 
-## Tech Stack
+**GitHub:** https://github.com/ayush200491
+
+## 🛠 Tech Stack
 
 * Remix
 * React
@@ -23,7 +26,7 @@ This portfolio serves as a central hub for my work, projects, and technical inte
 * Framer Motion
 * Cloudflare Pages
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
@@ -36,41 +39,31 @@ This portfolio serves as a central hub for my work, projects, and technical inte
 npm install
 ```
 
-### Run Development Server
+### Run Locally
 
 ```bash
 npm run dev
 ```
 
-Open your browser and visit:
+Open:
 
 ```text
 http://localhost:7777
 ```
 
-## Deployment
+## 📦 Deployment
 
-This project is configured for deployment on Cloudflare Pages.
+This project is deployed on Cloudflare Pages.
 
-Deploy using:
+Any changes pushed to the `main` branch are automatically built and deployed.
 
-```bash
-npm run deploy
-```
+## 📬 Contact
 
-## Contact Form Setup
+The contact form is powered by Formspree.
 
-To enable the contact form:
+Visitors can reach out directly through the portfolio website.
 
-1. Create an AWS account.
-2. Configure AWS SES (Simple Email Service).
-3. Copy `.dev.vars.example` to `.dev.vars`.
-4. Add your AWS credentials and configuration.
-5. Configure the same environment variables in Cloudflare Pages for production.
-
-Alternatively, you can replace AWS SES with Nodemailer or another email provider.
-
-## Project Structure
+## 📁 Project Structure
 
 ```text
 app/
@@ -78,14 +71,15 @@ public/
 scripts/
 ```
 
-## License
+## 📄 License
 
 This project is open source and available for learning and inspiration.
 
-Please do not copy and present my personal projects, content, or portfolio as your own work.
+Please do not copy or present my personal projects, portfolio content, or work as your own.
 
-## Connect With Me
+## 🤝 Connect With Me
 
-GitHub: https://github.com/ayush200491
-
-Feel free to explore my repositories, contribute, or reach out with feedback and suggestions.
+* GitHub: https://github.com/ayush200491
+* Portfolio: https://portfolio-55m.pages.dev
+* LinkedIn: https://www.linkedin.com/in/ayush-patidar-ap491/
+Feel free to explore my repositories and connect with me.

@@ -48,12 +48,6 @@ Open your browser and visit:
 http://localhost:7777
 ```
 
-### Run Storybook
-
-```bash
-npm run dev:storybook
-```
-
 ## Deployment
 
 This project is configured for deployment on Cloudflare Pages.
@@ -82,7 +76,6 @@ Alternatively, you can replace AWS SES with Nodemailer or another email provider
 app/
 public/
 scripts/
-storybook/
 ```
 
 ## License

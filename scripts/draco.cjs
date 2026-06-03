@@ -1,13 +1,22 @@
-const fs = require('fs-extra');
+const fs = require('fs');
+const path = require('path');
 
 const src = 'node_modules/three/examples/jsm/libs/draco/gltf';
 const output = 'public/draco';
 
-// Copy draco decoder from three.js into the public directory
-fs.copy(`${src}/draco_decoder.wasm`, `${output}/draco_decoder.wasm`, err => {
-  if (err) return console.error(err);
-});
+fs.mkdirSync(output, { recursive: true });
 
-fs.copy(`${src}/draco_wasm_wrapper.js`, `${output}/draco_wasm_wrapper.js`, err => {
-  if (err) return console.error(err);
-});
+const files = ['draco_decoder.wasm', 'draco_wasm_wrapper.js'];
+
+for (const file of files) {
+  const sourcePath = path.join(src, file);
+  const destinationPath = path.join(output, file);
+
+  try {
+    fs.copyFileSync(sourcePath, destinationPath);
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
+  }
+}
+
